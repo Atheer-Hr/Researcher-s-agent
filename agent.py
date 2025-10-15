@@ -1,5 +1,6 @@
 import openai
-client = openai.OpenAI(api_key="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")
+import os
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def ask_gpt(prompt):
     response = client.chat.completions.create(
